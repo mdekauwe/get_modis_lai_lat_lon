@@ -122,7 +122,8 @@ def main(url, header, lat, lon, prod, band, sd_band, qc_band, above_below,
     df = pd.DataFrame(lai_data, index=dates, columns=['LAI'])
     df["LAI_SD"] = sd_data
     df["QA"] = qc_data
-
+    df.index.name = 'dates'
+    
     return df
 
 def build_date_list(start_year, end_year):
