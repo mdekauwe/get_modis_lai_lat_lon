@@ -4,7 +4,9 @@
 Get MODIS LAI for a lat,lon point or area around a point.
 
 To do:
-- add all the old functionality, this works for now
+- get lai_sd
+- screen by good QA
+- add the other old missing functionality
 
 That's all folks.
 """
@@ -119,7 +121,7 @@ def build_date_list(start_year, end_year):
 if __name__ == "__main__":
 
     url = "https://modis.ornl.gov/rst/api/v1/"
-    header = {'Accept': 'text/json'} # csv response: header = {'Accept': 'text/csv'}
+    header = {'Accept': 'text/json'} 
     lat = 44.4523
     lon = -121.5574
     prod = 'MCD15A2H' # MODIS product
