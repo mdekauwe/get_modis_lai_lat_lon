@@ -28,9 +28,6 @@ def main(url, header, lat, lon, prod, band, sd_band, qc_band, above_below,
 
     dates = build_date_list(start_year, end_year)
 
-    #******* TESTING REMOVE **********#
-    dates = dates[0:25]
-
     lai_data = []
     sd_data = []
     qc_data = []
@@ -123,7 +120,7 @@ def main(url, header, lat, lon, prod, band, sd_band, qc_band, above_below,
     df["LAI_SD"] = sd_data
     df["QA"] = qc_data
     df.index.name = 'dates'
-    
+
     return df
 
 def build_date_list(start_year, end_year):
@@ -155,8 +152,10 @@ if __name__ == "__main__":
 
     url = "https://modis.ornl.gov/rst/api/v1/"
     header = {'Accept': 'text/json'}
-    lat = 44.4523
-    lon = -121.5574
+    #lat = 44.4523
+    #lon = -121.5574
+    lat = -14.0633
+    lon = 131.3181
     prod = 'MCD15A2H' # MODIS product
     band = 'Lai_500m'
     sd_band = "LaiStdDev_500m"
